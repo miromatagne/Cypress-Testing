@@ -35,6 +35,7 @@ const Login = () => {
         <label>Email address</label>
         <input
           type="text"
+          id="email-input"
           className="form-control"
           placeholder="Enter email"
           value={email}
@@ -45,6 +46,7 @@ const Login = () => {
         <label>Password</label>
         <input
           type="password"
+          id="password-input"
           className="form-control"
           placeholder="Enter password"
           value={password}
@@ -65,6 +67,7 @@ const Login = () => {
       </div>
       {error ? (
         <div
+          id="error-message"
           style={{
             display: "flex",
             color: "red",
@@ -80,7 +83,7 @@ const Login = () => {
         <></>
       )}
       <div className="d-grid" style={{ paddingTop: 5 }}>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary" id="submit-button">
           Submit
         </button>
       </div>
