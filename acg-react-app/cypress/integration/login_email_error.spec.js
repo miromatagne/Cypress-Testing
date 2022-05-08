@@ -1,4 +1,4 @@
-describe("My First Test", () => {
+describe("Test an error in email", () => {
   it("Opens the application", () => {
     cy.visit("localhost:3000");
 

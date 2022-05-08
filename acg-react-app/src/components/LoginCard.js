@@ -1,32 +1,18 @@
 import React, { Component, useState } from "react";
-const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
 
-  const validate = () => {
-    var valid = true;
-    if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,99}$/i.test(email)) {
-      setErrorMessage("The email address is invalid");
-      valid = false;
-    } else if (password === "") {
-      setErrorMessage("The password is invalid");
-      valid = false;
-    }
-    return valid;
-  };
-
-  const submitLogin = (e) => {
-    e.preventDefault();
-    console.log(email);
-    console.log(password);
-    if (!validate()) {
-      setError(true);
-      return;
-    }
-    return;
-  };
+const LoginCard = (props) => {
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    error,
+    setError,
+    errorMessage,
+    setErrorMessage,
+    validate,
+    submitLogin,
+  } = props;
 
   return (
     <form onSubmit={submitLogin}>
@@ -94,4 +80,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginCard;
