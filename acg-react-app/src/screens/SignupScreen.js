@@ -10,6 +10,7 @@ const SignupScreen = () => {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [redirect, setRedirect] = useState(false);
+  const [userID, setUserID] = useState("");
 
   const validate = () => {
     var valid = true;
@@ -26,7 +27,10 @@ const SignupScreen = () => {
   const register = async () => {
     try {
       const user = await createUserWithEmailAndPassword(auth, email, password);
-      console.log(user);
+      setUserID(user.user.uid);
+      console.log(user.user.uid);
+
+      setRedirect(true);
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +45,6 @@ const SignupScreen = () => {
       return;
     }
     register();
-    setRedirect(true);
   };
 
   return (
