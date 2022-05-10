@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import LoginCard from "../components/LoginCard";
 import { Link, Navigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -29,7 +31,16 @@ const LoginScreen = () => {
       setError(true);
       return;
     }
-    setRedirect(true);
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        setRedirect(true);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
   };
 
   return (
