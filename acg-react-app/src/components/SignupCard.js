@@ -1,42 +1,67 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
-const SignupCard = () => {
+const SignupCard = (props) => {
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    error,
+    setError,
+    errorMessage,
+    setErrorMessage,
+    validate,
+    submitSignup,
+  } = props;
+
   return (
-    <div>
+    <form onSubmit={submitSignup}>
       <h3>Sign Up</h3>
-      <div className="mb-3">
-        <label>First name</label>
-        <input type="text" className="form-control" placeholder="First name" />
-      </div>
-      <div className="mb-3">
-        <label>Last name</label>
-        <input type="text" className="form-control" placeholder="Last name" />
-      </div>
       <div className="mb-3">
         <label>Email address</label>
         <input
-          type="email"
+          type="text"
+          id="email-input"
           className="form-control"
           placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div className="mb-3">
         <label>Password</label>
         <input
           type="password"
+          id="password-input"
           className="form-control"
           placeholder="Enter password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <div className="d-grid">
-        <button type="submit" className="btn btn-primary">
-          Sign Up
+      {error ? (
+        <div
+          id="error-message"
+          style={{
+            display: "flex",
+            color: "red",
+            fontSize: 13,
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+          }}
+        >
+          {errorMessage}
+        </div>
+      ) : (
+        <></>
+      )}
+      <div className="d-grid" style={{ paddingTop: 5 }}>
+        <button type="submit" className="btn btn-primary" id="submit-button">
+          Submit
         </button>
       </div>
-      <p className="forgot-password text-right">
-        Already registered <a href="/sign-in">sign in?</a>
-      </p>
-    </div>
+    </form>
   );
 };
 
