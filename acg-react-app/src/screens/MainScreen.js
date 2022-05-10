@@ -20,7 +20,7 @@ const MainScreen = () => {
   return (
     <div>
       {redirect ? <Navigate to="/sign-in" /> : <></>}
-      <div>{user.email}</div>
+      <div id="user-email">{user.email}</div>
       <button className="btn btn-primary" id="logout-button" onClick={logout}>
         Log Out
       </button>
