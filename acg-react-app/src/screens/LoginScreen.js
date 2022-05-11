@@ -40,6 +40,10 @@ const LoginScreen = () => {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        setError(true);
+        setErrorMessage(
+          "The email or password you entered does not correspond to a registered user"
+        );
       });
   };
 
