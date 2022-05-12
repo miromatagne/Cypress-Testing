@@ -10,6 +10,9 @@ const TodoForm = (props) => {
 
   const submit = (event) => {
     event.preventDefault();
+
+    if (userInput == "") return;
+    
     addTodo(userInput);
     setUserInput("");
   }
@@ -18,6 +21,7 @@ const TodoForm = (props) => {
     <div className="m-5 mx-auto" style={{maxWidth: "50rem"}}>
       <form onSubmit={submit}>
         <input
+          id="todo-input"
           className="form-control"
           type="text"
           placeholder="Buy a new laptop..."

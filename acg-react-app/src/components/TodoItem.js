@@ -20,7 +20,7 @@ const TodoItem = (props) => {
             </div>
             <div className="col-6">
               <div className={todo.done ? "strike" : ""}>
-                <p className="h5">
+                <p className="h5 todo-text">
                   {todo.description}
                 </p>
               </div>
