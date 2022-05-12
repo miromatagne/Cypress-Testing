@@ -19,15 +19,15 @@ const TodoItem = (props) => {
               />
             </div>
             <div className="col-6">
-              <div className={todo.done ? "strike" : ""}>
-                <p className="h5 todo-text">
+              <div>
+                <p className={`${todo.done ? "strike " : ""}h5 todo-text`}>
                   {todo.description}
                 </p>
               </div>
             </div>
             <div className="col-3">
               <button
-                className="btn btn-danger"
+                className="rm-button btn btn-danger"
                 type="button"
                 onClick={() => onRemove(todo.id)}
               >
