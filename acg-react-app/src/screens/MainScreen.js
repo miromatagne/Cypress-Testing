@@ -29,7 +29,7 @@ const MainScreen = () => {
         Log Out
       </button>
 
-      <div className="container mt-5" style={{minWidth: "32rem"}}>
+      <div className="container mt-5" style={{ minWidth: "32rem" }}>
         <p className="h1 text-center text-white">Todo list</p>
         <TodoList todos={todoList} setTodos={setTodoList} />
       </div>
