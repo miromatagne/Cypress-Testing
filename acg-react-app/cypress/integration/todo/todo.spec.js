@@ -37,6 +37,11 @@ describe("Test everything of the todo list", () => {
     cy.get(".todo-text").first().should("not.have.class", "strike");
   });
 
+  it("Drag and drop a todo item", () => {
+    cy.get(".todo0").dragAndDrop(".todo0", ".todo2").wait(50);
+    cy.get(".todo-text").last().should("have.text", todos[0]);
+  });
+
   it("Removes a todo", () => {
     cy.get(".rm-button").last().click("center");
     cy.get(".todo-text").should("have.length", 2);

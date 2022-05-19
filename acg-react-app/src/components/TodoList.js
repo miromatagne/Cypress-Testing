@@ -48,6 +48,7 @@ const TodoList = (props) => {
               {todos.map((todo, index) => (
                 <Draggable
                   key={todo.id}
+                  id={todo.id.toString()}
                   draggableId={todo.id.toString()}
                   index={index}
                 >
@@ -56,6 +57,7 @@ const TodoList = (props) => {
                       ref={provided.innerRef}
                       {...provided.draggableProps}
                       {...provided.dragHandleProps}
+                      className={"todo" + todo.id}
                     >
                       <TodoItem
                         todo={todo}
