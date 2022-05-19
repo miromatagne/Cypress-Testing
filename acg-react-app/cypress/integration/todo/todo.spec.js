@@ -38,7 +38,7 @@ describe("Test everything of the todo list", () => {
   });
 
   it("Drag and drop a todo item", () => {
-    cy.get(".todo0").dragAndDrop(".todo0", ".todo2").wait(50);
+    cy.get(".todo0").dragAndDrop(".todo0", ".todo2").wait(400);
     cy.get(".todo-text").last().should("have.text", todos[0]);
   });
 
