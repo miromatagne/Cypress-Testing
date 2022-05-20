@@ -24,10 +24,19 @@ const MainScreen = () => {
   return (
     <div>
       {redirect ? <Navigate to="/sign-in" /> : <></>}
-      <div id="user-email">{user?.email || "Guest"}</div>
-      <button className="btn btn-primary" id="logout-button" onClick={logout}>
-        Log Out
-      </button>
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          justifyContent: "space-between",
+          padding: 10,
+        }}
+      >
+        <div id="user-email">{user?.email || "Guest"}</div>
+        <button className="btn btn-danger" id="logout-button" onClick={logout}>
+          Log Out
+        </button>
+      </div>
 
       <div className="container mt-5" style={{ minWidth: "32rem" }}>
         <p className="h1 text-center text-white">Todo list</p>
