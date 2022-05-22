@@ -1,4 +1,4 @@
-describe("Test a successful sign up", () => {
+describe("Test an existing account error", () => {
   it("Opens the application", () => {
     cy.visit("localhost:3000/sign-up");
   });
