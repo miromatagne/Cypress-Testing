@@ -1,1 +1,7 @@
-{}
+{
+    "testFiles": [
+        "open_app.spec.js",
+        "authentication/*"
+        "todo/*",
+    ]
+}
