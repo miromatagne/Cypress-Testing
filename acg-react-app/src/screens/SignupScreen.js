@@ -32,6 +32,8 @@ const SignupScreen = () => {
 
       setRedirect(true);
     } catch (error) {
+      setError(true);
+      setErrorMessage("An account with this email address already exists");
       console.log(error);
     }
   };
