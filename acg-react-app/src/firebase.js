@@ -23,12 +23,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD6uqLEmAFEXceFmUjW6w1LQqrn0V2Z9X4",
-  authDomain: "cypress-testing-5a379.firebaseapp.com",
-  projectId: "cypress-testing-5a379",
-  storageBucket: "cypress-testing-5a379.appspot.com",
-  messagingSenderId: "559412448931",
-  appId: "1:559412448931:web:5f116edeec5571966eb916",
+  apiKey: "AIzaSyC65RjPYdeGATDi0f_jntd-9yNLbx7X56Y",
+  authDomain: "cypress-acg.firebaseapp.com",
+  projectId: "cypress-acg",
+  storageBucket: "cypress-acg.appspot.com",
+  messagingSenderId: "596268855513",
+  appId: "1:596268855513:web:39824b782a1be3e79b8ec8",
 };
 
 // Initialize Firebase
